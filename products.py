@@ -1,12 +1,19 @@
-#讀取
+import os
+
+#檢查 讀取
 products = []
-with open('products.csv', 'r', encoding='utf-8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue
-		name, price = line.steip().split(',')
-		products.append([name, price])
-print(products)
+if os.path.isfile('products.csv'):
+	print('yas')
+	with open('products.csv', 'r', encoding='utf-8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue
+			name, price = line.steip().split(',')
+			products.append([name, price])
+	print(products)
+
+else:
+	print('no')
 
 #使用者輸入
 while True:
